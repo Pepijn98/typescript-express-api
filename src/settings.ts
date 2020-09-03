@@ -1,5 +1,5 @@
 import Settings from "~/types/Settings";
-import pkg from "../package.json";
+import pkg from "@/package.json";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config();
@@ -9,18 +9,7 @@ const env = process.env.NODE_ENV || "development";
 const settings: Settings = {
     env,
     port: env === "development" ? 3000 : 8080,
-    uaBlacklist: [
-        "Hakai/2.0",
-        "Hello, World",
-        "Googlebot",
-        "Slurp",
-        "Yahoo! Slurp",
-        "bingbot",
-        "AhrefsBot",
-        "Baiduspider",
-        "MJ12bot",
-        "YandexBot"
-    ],
+    uaBlacklist: ["Hakai/2.0", "Hello, World", "Googlebot", "Slurp", "Yahoo! Slurp", "bingbot", "AhrefsBot", "Baiduspider", "MJ12bot", "YandexBot"],
     database: {
         user: process.env.MONGO_USER || "",
         password: process.env.MONGO_PASS || "",
